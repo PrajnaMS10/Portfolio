@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter",sans-serif;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+.portfolio-container{
+    min-height: 10vh;
+    width: 1005;
+}
+
+.navlist{
+    display: flex;
+    gap: 3.5rem;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.navlist li{
+    list-style: none;
+}
+
+.navlist li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: green;
+    position: relative;
+}
+
+.navlist li a::after{
+    content: "";
+    position: absolute;
+    background: green;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .5s;
+}
+
+.navlist li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.content-wrapper{
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    width: 80%;
+    justify-content: space-around;
+    padding: 0 10%;
+}
+
+.content-left{
+    width: 70%;
+}
+
+.content-left .lead{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.txt-content{
+    display: flex;
+    width: 100%;
+}
+
+.change_txt{
+    font-size: 4.5rem;
+    color: green;
+    font-weight: 600;
+    position: relative;
+}
+
+.txt-content .change_txt::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,1);
+    animation: animateTxt 5s steps(25) infinite;
+}
+
+.content-left p{
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: 1rem 0;
+}
+
+.content-left button{
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1rem 2rem;
+    margin: 2rem 2rem 0 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 02px;
+}
+
+.content-left button:hover{
+    background: green;
+    border: none;
+    padding: 1rem 2rem;
+}
+
+.content-left button:active{
+    transform: scale(0.95);
+}
+
+@keyframes animateTxt{
+    3%{
+        left:0;
+    }
+    30%{
+        left: 100%;
+    }
+    80%{
+        left: 100%;   
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.content-right{
+    width : 25%;
+    box-shadow: none;
+    border-radius: 05px;
+    background:none;
+    transform: translateX(300%);
+    animation: imgAnimate 5s forwards;
+
+}
+
+.content-right img{
+    display: block;
+    min-height: 100%;
+    width: 500px;
+    height: 500px;
+}
+
+@keyframes imgAnimate{
+    to{
+        transform: translateX(0);
+        transform: skew(-3deg);
+    }
+}
+
+
